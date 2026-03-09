@@ -77,7 +77,7 @@ export default function About() {
 
             <div>
               <img
-                src="https://images.unsplash.com/photo-1576669801615-4e2f69504d58?w=500&h=400&fit=crop"
+                src="https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/9jzuu1or_Screenshot%202026-03-09%20at%2011.56.46%E2%80%AFAM.png"
                 alt="The THC Community"
                 className="w-full h-64 sm:h-80 object-cover rounded-2xl"
                 loading="lazy"
