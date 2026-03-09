@@ -71,7 +71,7 @@ export default function Home() {
               <div className="relative">
                 <div className="bg-white rounded-2xl border border-[rgba(13,27,62,0.10)] p-5 shadow-[0_1px_0_rgba(13,27,62,0.06),0_20px_45px_rgba(13,27,62,0.12)]">
                   <img
-                    src="https://images.unsplash.com/photo-1559223607-a43c990c692c?w=500&h=320&fit=crop"
+                    src="https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/7qrfhn27_LinkedIn%20Image.jpeg"
                     alt="THC Community Event"
                     className="w-full h-48 sm:h-56 object-cover rounded-xl mb-4"
                     loading="eager"
