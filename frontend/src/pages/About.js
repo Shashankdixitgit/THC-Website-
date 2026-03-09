@@ -6,20 +6,26 @@ const TEAM = [
   {
     name: 'Parul',
     role: 'Founder',
-    image: 'https://images.unsplash.com/photo-1612531385446-f7e6d131e1d0?w=200&h=200&fit=crop&crop=face',
+    image: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/d0kx6kdc_Screenshot%202026-03-09%20at%2012.01.13%E2%80%AFPM.png',
     initials: 'P',
   },
   {
-    name: 'Team Member',
-    role: 'Operations Lead',
+    name: 'Dr. Raunaq Pradhan',
+    role: 'Founding Member',
     image: '',
-    initials: 'TM',
+    initials: 'RP',
   },
   {
-    name: 'Team Member',
-    role: 'Community Manager',
+    name: 'Shashank Dixit',
+    role: 'Founder Office',
     image: '',
-    initials: 'TM',
+    initials: 'SD',
+  },
+  {
+    name: 'Sonal',
+    role: 'Founder Office',
+    image: '',
+    initials: 'S',
   },
 ];
 
@@ -98,7 +104,7 @@ export default function About() {
           <h2 className="text-2xl sm:text-3xl font-semibold text-[#0D1B3E] tracking-tight mb-8">
             Core Team
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {TEAM.map((member, i) => (
               <div
                 key={i}
