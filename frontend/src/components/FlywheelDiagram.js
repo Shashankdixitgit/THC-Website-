@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Users, AlertCircle, CheckCircle, Lightbulb, Rocket } from 'lucide-react';
 
 const SEGMENTS = [
@@ -41,7 +41,24 @@ const SEGMENTS = [
 
 export const FlywheelDiagram = () => {
   const [active, setActive] = useState(null);
+  const [rotation, setRotation] = useState(0);
+  const [paused, setPaused] = useState(false);
   const activeSegment = SEGMENTS.find((s) => s.id === active);
+
+  // Continuous clockwise rotation
+  useEffect(() => {
+    if (paused) return;
+    const interval = setInterval(() => {
+      setRotation((prev) => (prev + 0.15) % 360);
+    }, 16); // ~60fps
+    return () => clearInterval(interval);
+  }, [paused]);
+
+  const SIZE = 480; // visual container
+  const RADIUS = 170; // orbit radius
+  const CENTER = SIZE / 2;
+  const PAD = 50; // padding for segment overflow
+  const TOTAL = SIZE + PAD * 2; // total wrapper including overflow space
 
   return (
     <section data-testid="flywheel-section" className="py-16 sm:py-20 lg:py-24">
@@ -58,20 +75,55 @@ export const FlywheelDiagram = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Flywheel Visual */}
-          <div className="relative flex items-center justify-center">
-            <div className="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px]">
-              {/* Center circle */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-24 h-24 rounded-full bg-[#0D1B3E] flex items-center justify-center shadow-lg">
-                  <span className="text-white font-display text-sm font-semibold text-center leading-tight px-2">THC<br/>Flywheel</span>
+          <div
+            className="relative"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => { setPaused(false); setActive(null); }}
+            style={{ width: '100%', maxWidth: TOTAL, height: TOTAL, margin: '0 auto' }}
+          >
+            <div className="absolute" style={{ width: SIZE, height: SIZE, left: PAD, top: PAD }}>
+              {/* Dashed orbit ring — rotates */}
+              <svg
+                className="absolute inset-0 w-full h-full"
+                viewBox={`0 0 ${SIZE} ${SIZE}`}
+                style={{ transform: `rotate(${rotation}deg)` }}
+              >
+                <circle
+                  cx={CENTER}
+                  cy={CENTER}
+                  r={RADIUS}
+                  fill="none"
+                  stroke="rgba(13,27,62,0.10)"
+                  strokeWidth="2"
+                  strokeDasharray="10 6"
+                />
+                {/* Small directional arrows on the orbit */}
+                {[0, 72, 144, 216, 288].map((a) => {
+                  const rad = (a - 15) * (Math.PI / 180);
+                  const ax = CENTER + Math.cos(rad) * RADIUS;
+                  const ay = CENTER + Math.sin(rad) * RADIUS;
+                  return (
+                    <circle key={a} cx={ax} cy={ay} r="2.5" fill="rgba(26,123,110,0.25)" />
+                  );
+                })}
+              </svg>
+
+              {/* Center hub — stays static */}
+              <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+                <div className="w-28 h-28 rounded-full bg-[#0D1B3E] flex items-center justify-center shadow-[0_4px_24px_rgba(13,27,62,0.3)]">
+                  <span className="text-white font-display text-base font-semibold text-center leading-tight px-2">
+                    THC<br />Flywheel
+                  </span>
                 </div>
               </div>
-              {/* Segments around the circle */}
+
+              {/* Orbiting segments */}
               {SEGMENTS.map((seg, i) => {
-                const angle = (i * 72 - 90) * (Math.PI / 180);
-                const radius = 130;
-                const x = Math.cos(angle) * radius;
-                const y = Math.sin(angle) * radius;
+                const baseAngle = i * 72 - 90; // evenly spaced, starting from top
+                const totalAngle = baseAngle + rotation;
+                const rad = totalAngle * (Math.PI / 180);
+                const x = CENTER + Math.cos(rad) * RADIUS;
+                const y = CENTER + Math.sin(rad) * RADIUS;
                 const Icon = seg.icon;
                 const isActive = active === seg.id;
 
@@ -81,31 +133,30 @@ export const FlywheelDiagram = () => {
                     data-testid={`flywheel-segment-${seg.id}`}
                     onClick={() => setActive(isActive ? null : seg.id)}
                     onMouseEnter={() => setActive(seg.id)}
-                    className={`absolute flex flex-col items-center gap-1.5 p-3 rounded-2xl transition-all duration-200 cursor-pointer ${
+                    className={`absolute flex flex-col items-center gap-1 rounded-2xl transition-shadow duration-200 cursor-pointer z-10 ${
                       isActive
-                        ? 'bg-white shadow-lg scale-110 z-10'
-                        : 'hover:bg-white/80 hover:shadow-md'
+                        ? 'bg-white shadow-lg scale-110'
+                        : 'bg-white/90 hover:shadow-md'
                     }`}
                     style={{
-                      left: `calc(50% + ${x}px - 40px)`,
-                      top: `calc(50% + ${y}px - 35px)`,
-                      width: '80px',
+                      left: x - 42,
+                      top: y - 38,
+                      width: 84,
+                      padding: '8px 4px',
                     }}
                   >
                     <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center"
+                      className="w-11 h-11 rounded-xl flex items-center justify-center"
                       style={{ backgroundColor: `${seg.color}15` }}
                     >
                       <Icon className="w-5 h-5" style={{ color: seg.color }} />
                     </div>
-                    <span className="text-[11px] font-semibold text-[#0D1B3E] text-center leading-tight">{seg.label}</span>
+                    <span className="text-[11px] font-semibold text-[#0D1B3E] text-center leading-tight mt-0.5">
+                      {seg.label}
+                    </span>
                   </button>
                 );
               })}
-              {/* Connecting arcs */}
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 380 380">
-                <circle cx="190" cy="190" r="130" fill="none" stroke="rgba(13,27,62,0.08)" strokeWidth="2" strokeDasharray="8 8" />
-              </svg>
             </div>
           </div>
 
@@ -128,7 +179,7 @@ export const FlywheelDiagram = () => {
                   return (
                     <button
                       key={seg.id}
-                      onClick={() => setActive(seg.id)}
+                      onClick={() => { setActive(seg.id); setPaused(true); }}
                       className="w-full text-left flex items-start gap-4 p-4 rounded-xl border border-[rgba(13,27,62,0.08)] hover:bg-white hover:shadow-sm transition-all duration-200"
                     >
                       <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: `${seg.color}12` }}>
