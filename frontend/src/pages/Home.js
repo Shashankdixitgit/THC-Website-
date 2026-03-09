@@ -169,6 +169,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Speakers */}
+      <section className="py-16 sm:py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#0D1B3E] tracking-tight leading-tight">
+            Past events & sessions have featured some of{' '}
+            <em className="not-italic text-[#E8541A]">the most respected</em> funds and operators globally.
+          </h2>
+        </div>
+
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-[#F5F0E8] to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-[#F5F0E8] to-transparent z-10" />
+          <div className="flex gap-6 animate-marquee hover:[animation-play-state:paused]" style={{ width: 'max-content', animationDuration: '40s' }}>
+            {[...[
+              { name: 'Svetha Ravi', role: 'Partner at Arali Ventures', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Vivek Kumar Jha', role: 'Partner, Fox Mandal & Ass.', img: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Dr. Meena Ganesh', role: 'MD & CEO, Portea Medical', img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Anand Sudarshan', role: 'Partner, Chiratae Ventures', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Priya Sharma', role: 'VP Innovation, Apollo Hospitals', img: 'https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Rajesh Kutty', role: 'Managing Director, Healthquad', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Dr. Sangita Reddy', role: 'Joint MD, Apollo Hospitals', img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Vikram Vuppala', role: 'Founder & CEO, NephroPlus', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=400&fit=crop&crop=face' },
+            ], ...[
+              { name: 'Svetha Ravi', role: 'Partner at Arali Ventures', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Vivek Kumar Jha', role: 'Partner, Fox Mandal & Ass.', img: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Dr. Meena Ganesh', role: 'MD & CEO, Portea Medical', img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Anand Sudarshan', role: 'Partner, Chiratae Ventures', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Priya Sharma', role: 'VP Innovation, Apollo Hospitals', img: 'https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Rajesh Kutty', role: 'Managing Director, Healthquad', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Dr. Sangita Reddy', role: 'Joint MD, Apollo Hospitals', img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Vikram Vuppala', role: 'Founder & CEO, NephroPlus', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=400&fit=crop&crop=face' },
+            ]].map((speaker, i) => (
+              <div key={`speaker-${i}`} className="flex-shrink-0 w-[220px] group">
+                <div className="relative mb-4">
+                  <div className="w-[220px] h-[280px] rounded-2xl overflow-hidden bg-[#0D1B3E] relative">
+                    <img
+                      src={speaker.img}
+                      alt={speaker.name}
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 rounded-2xl" style={{ boxShadow: 'inset 0 0 0 3px rgba(232,84,26,0.4)' }} />
+                  </div>
+                </div>
+                <h4 className="text-base font-semibold text-[#0D1B3E]">{speaker.name}</h4>
+                <p className="text-sm text-[#6B7280] mt-0.5">{speaker.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Banner */}
       <section className="py-16 sm:py-20" style={{ background: 'linear-gradient(90deg, rgba(26,123,110,0.10), rgba(232,84,26,0.10))' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
