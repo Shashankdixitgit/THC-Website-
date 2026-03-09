@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { SectionTag } from '@/components/SectionTag';
@@ -15,11 +16,38 @@ const STATS = [
   { value: '1,000+', label: 'Stakeholders actively engaged' },
 ];
 
-const LOGOS = [
-  'Apollo Hospitals', 'Manipal Health', 'Fortis Healthcare', 'Narayana Health',
-  'Max Healthcare', 'Cipla', 'Dr. Reddy\'s', 'Biocon', 'PharmEasy',
-  'Practo', '1mg', 'MediBuddy',
+const NETWORK_LOGOS = [
+  { name: 'Apollo Hospitals', category: 'Hospitals' },
+  { name: 'Manipal Health', category: 'Hospitals' },
+  { name: 'Fortis Healthcare', category: 'Hospitals' },
+  { name: 'Narayana Health', category: 'Hospitals' },
+  { name: 'Max Healthcare', category: 'Hospitals' },
+  { name: 'Cipla', category: 'Pharma' },
+  { name: 'Dr. Reddy\'s', category: 'Pharma' },
+  { name: 'Biocon', category: 'Pharma' },
+  { name: 'Sun Pharma', category: 'Pharma' },
+  { name: 'PharmEasy', category: 'Founder Network' },
+  { name: 'Practo', category: 'Founder Network' },
+  { name: '1mg', category: 'Founder Network' },
+  { name: 'MediBuddy', category: 'Founder Network' },
+  { name: 'Niramai', category: 'Founder Network' },
+  { name: 'Dozee', category: 'Founder Network' },
+  { name: 'Qure.ai', category: 'Founder Network' },
+  { name: 'SigTuple', category: 'Founder Network' },
+  { name: 'Stryker', category: 'Medtech' },
+  { name: 'Medtronic', category: 'Medtech' },
+  { name: 'Siemens Healthineers', category: 'Medtech' },
+  { name: 'GE HealthCare', category: 'Medtech' },
+  { name: 'Sequoia Capital', category: 'Capital' },
+  { name: 'Lightspeed', category: 'Capital' },
+  { name: 'Healthquad', category: 'Capital' },
+  { name: 'Chiratae Ventures', category: 'Capital' },
+  { name: 'Google Health', category: 'Big Tech' },
+  { name: 'Microsoft Health', category: 'Big Tech' },
+  { name: 'Amazon Health', category: 'Big Tech' },
 ];
+
+const NETWORK_FILTERS = ['All', 'Founder Network', 'Hospitals', 'Pharma', 'Medtech', 'Capital', 'Big Tech'];
 
 const BENEFITS = [
   { icon: AlertCircle, title: 'Real Problems', description: 'Hear what clinicians and healthcare leaders are actually struggling with — first-hand, unfiltered signal.' },
@@ -41,6 +69,11 @@ const TESTIMONIALS = [
 ];
 
 export default function Community() {
+  const [activeFilter, setActiveFilter] = useState('All');
+  const filteredLogos = activeFilter === 'All'
+    ? NETWORK_LOGOS
+    : NETWORK_LOGOS.filter((l) => l.category === activeFilter);
+
   return (
     <div data-testid="community-page">
       {/* Hero */}
@@ -76,11 +109,29 @@ export default function Community() {
           <h2 className="text-2xl sm:text-3xl font-semibold text-[#0D1B3E] tracking-tight mb-3">
             Our community represents the full healthcare landscape
           </h2>
-          <p className="text-[#6B7280] mb-8">HealthTech to hospitals, VCs to pharma — we bring the ecosystem together</p>
+          <p className="text-[#6B7280] mb-6">HealthTech to hospitals, VCs to pharma — we bring the ecosystem together</p>
+          {/* Filters */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {NETWORK_FILTERS.map((filter) => (
+              <button
+                key={filter}
+                data-testid={`network-filter-${filter.toLowerCase().replace(/\s/g, '-')}`}
+                onClick={() => setActiveFilter(filter)}
+                className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors duration-200 ${
+                  activeFilter === filter
+                    ? 'bg-[#0D1B3E] text-white border-[#0D1B3E]'
+                    : 'bg-white text-[#0D1B3E]/70 border-[rgba(13,27,62,0.12)] hover:bg-[rgba(13,27,62,0.04)]'
+                }`}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+          {/* Logos */}
           <div className="flex flex-wrap gap-3">
-            {LOGOS.map((logo) => (
-              <div key={logo} className="px-4 py-2.5 bg-white rounded-full border border-[rgba(13,27,62,0.08)] text-sm font-medium text-[#0D1B3E]/70">
-                {logo}
+            {filteredLogos.map((logo) => (
+              <div key={logo.name} className="px-4 py-2.5 bg-white rounded-full border border-[rgba(13,27,62,0.08)] text-sm font-medium text-[#0D1B3E]/70">
+                {logo.name}
               </div>
             ))}
           </div>
