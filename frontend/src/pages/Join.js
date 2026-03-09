@@ -78,7 +78,7 @@ const COMPARISON_FEATURES = [
   { name: 'Weekly AMAs', open: false, starter: true, ascent: true, catalyst: true },
   { name: 'ASCENT Program', open: false, starter: false, ascent: true, catalyst: false },
   { name: 'Curated Intros & Matchmaking', open: false, starter: true, ascent: true, catalyst: true },
-  { name: 'Closed CXO/Investor Forums', open: false, starter: false, ascent: false, catalyst: true },
+  { name: 'Closed CXO/Investor Forums', open: false, starter: false, ascent: true, catalyst: true },
   { name: 'Co-creation & Pilots', open: false, starter: false, ascent: true, catalyst: true },
   { name: 'Concierge Support', open: false, starter: false, ascent: false, catalyst: true },
 ];
