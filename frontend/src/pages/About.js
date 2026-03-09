@@ -12,13 +12,13 @@ const TEAM = [
   {
     name: 'Dr. Raunaq Pradhan',
     role: 'Founding Member',
-    image: '',
+    image: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/gzt6vucq_Screenshot%202026-03-09%20at%2012.03.41%E2%80%AFPM.png',
     initials: 'RP',
   },
   {
     name: 'Shashank Dixit',
     role: 'Founder Office',
-    image: '',
+    image: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/m41d2hcq_Screenshot%202026-03-09%20at%2012.03.57%E2%80%AFPM.png',
     initials: 'SD',
   },
 ];
