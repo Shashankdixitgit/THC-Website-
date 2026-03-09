@@ -7,22 +7,24 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@
 import { Label } from '@/components/ui/label';
 import { submitPartnerInquiry } from '@/lib/api';
 import { toast } from 'sonner';
-import { Calendar, Heart, FlaskConical, Rocket, Megaphone, ArrowRight, Loader2 } from 'lucide-react';
+import { Calendar, Heart, Compass, Rocket, Megaphone, ArrowRight, Loader2, UsersRound } from 'lucide-react';
 
 const PARTNERSHIP_TYPES = [
   { icon: Calendar, title: 'Co-host an Event', description: 'Bring your community into a joint curated engagement' },
   { icon: Heart, title: 'Sponsor a Program', description: 'Fund and co-design clinician, founder, or operator programs' },
-  { icon: FlaskConical, title: 'Research Roundtable', description: 'Gather signal on specific healthcare challenges' },
+  { icon: Compass, title: 'Advisory Support', description: 'Building right GTM strategy, Funding and market Access' },
   { icon: Rocket, title: 'Pilot with Startups', description: 'Get introduced to vetted champions solving your problems' },
   { icon: Megaphone, title: 'Ecosystem Visibility', description: 'Newsletter features, speaking slots, community spotlight' },
+  { icon: UsersRound, title: 'Talent Visibility', description: 'Get connected to the right talent to team up and scale' },
 ];
 
 const INTEREST_OPTIONS = [
   'Co-host an Event',
   'Sponsor a Program',
-  'Research Roundtable',
+  'Advisory Support',
   'Pilot with Startups',
   'Ecosystem Visibility',
+  'Talent Visibility',
   'Other',
 ];
 
