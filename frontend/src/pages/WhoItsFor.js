@@ -144,7 +144,7 @@ export default function WhoItsFor() {
               <TabsContent key={s.id} value={s.id} className="mt-0">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {/* Left: challenges */}
-                  <div>
+                  <div className="flex flex-col justify-center">
                     <h2 className="text-2xl sm:text-3xl font-semibold text-[#0D1B3E] mb-4">{s.headline}</h2>
                     <p className="text-[#6B7280] leading-relaxed mb-6">{s.description}</p>
                     <div className="bg-[rgba(232,84,26,0.04)] rounded-2xl p-6 border border-[rgba(232,84,26,0.12)]">
