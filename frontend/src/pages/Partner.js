@@ -15,7 +15,7 @@ const PARTNERSHIP_TYPES = [
   { icon: Compass, title: 'Advisory Support', description: 'Building right GTM strategy, Funding and market Access' },
   { icon: Rocket, title: 'Pilot with Startups', description: 'Get introduced to vetted champions solving your problems' },
   { icon: Megaphone, title: 'Ecosystem Visibility', description: 'Newsletter features, speaking slots, community spotlight' },
-  { icon: UsersRound, title: 'Talent Visibility', description: 'Get connected to the right talent to team up and scale' },
+  { icon: UsersRound, title: 'Talent Visibility', description: 'Get connected to the right talent to hire and scale' },
 ];
 
 const INTEREST_OPTIONS = [
