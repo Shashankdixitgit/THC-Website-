@@ -1,18 +1,34 @@
 [
   {
-    "content": "Retrieve and map uploaded speaker images to speaker data",
+    "content": "Update Partner.js - remove API call, show mock success toast",
     "status": "completed"
   },
   {
-    "content": "Locate speakers array in Home.js and identify placeholder entries",
+    "content": "Delete api.js and remove axios dependency",
     "status": "completed"
   },
   {
-    "content": "Replace 4 placeholder speakers with real data and image URLs",
+    "content": "Clean up craco.config.js - remove Emergent-specific plugins",
     "status": "completed"
   },
   {
-    "content": "Verify with screenshot that speakers section displays correctly",
+    "content": "Clean up index.html - remove Emergent scripts, badge, PostHog",
+    "status": "completed"
+  },
+  {
+    "content": "Add vercel.json for SPA routing",
+    "status": "completed"
+  },
+  {
+    "content": "Remove health-check plugins folder",
+    "status": "completed"
+  },
+  {
+    "content": "Test build compiles successfully",
+    "status": "completed"
+  },
+  {
+    "content": "Verify site works via screenshot",
     "status": "completed"
   }
 ]

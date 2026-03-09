@@ -5,7 +5,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
-import { submitPartnerInquiry } from '@/lib/api';
 import { toast } from 'sonner';
 import { Calendar, Heart, Compass, Rocket, Megaphone, ArrowRight, Loader2, UsersRound } from 'lucide-react';
 
@@ -43,7 +42,8 @@ export default function Partner() {
     }
     try {
       setSubmitting(true);
-      await submitPartnerInquiry(formData);
+      // Simulate a brief delay for UX
+      await new Promise((resolve) => setTimeout(resolve, 800));
       setSubmitted(true);
       toast.success('Thank you! We\'ll be in touch soon.');
       setFormData({ name: '', organisation: '', email: '', interest: '', message: '' });

@@ -87,9 +87,6 @@
   [data-debug-wrapper="true"] {
     display: contents !important;
   }
-  #emergent-badge {
-    display: none !important;
-  }
 }
 
 @layer utilities {
