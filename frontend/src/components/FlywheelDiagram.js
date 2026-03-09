@@ -42,23 +42,19 @@ const SEGMENTS = [
 export const FlywheelDiagram = () => {
   const [active, setActive] = useState(null);
   const [rotation, setRotation] = useState(0);
-  const [paused, setPaused] = useState(false);
   const activeSegment = SEGMENTS.find((s) => s.id === active);
 
   // Continuous clockwise rotation
   useEffect(() => {
-    if (paused) return;
     const interval = setInterval(() => {
       setRotation((prev) => (prev + 0.15) % 360);
     }, 16); // ~60fps
     return () => clearInterval(interval);
-  }, [paused]);
+  }, []);
 
   const SIZE = 480; // visual container
   const RADIUS = 170; // orbit radius
   const CENTER = SIZE / 2;
-  const PAD = 50; // padding for segment overflow
-  const TOTAL = SIZE + PAD * 2; // total wrapper including overflow space
 
   return (
     <section data-testid="flywheel-section" className="py-16 sm:py-20 lg:py-24">
@@ -76,12 +72,10 @@ export const FlywheelDiagram = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Flywheel Visual */}
           <div
-            className="relative"
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => { setPaused(false); setActive(null); }}
-            style={{ width: '100%', maxWidth: TOTAL, height: TOTAL, margin: '0 auto' }}
+            className="relative w-full flex items-center justify-center"
+            style={{ minHeight: SIZE + 60 }}
           >
-            <div className="absolute" style={{ width: SIZE, height: SIZE, left: PAD, top: PAD }}>
+            <div className="relative mx-auto" style={{ width: SIZE, height: SIZE }}>
               {/* Dashed orbit ring — rotates */}
               <svg
                 className="absolute inset-0 w-full h-full"
@@ -179,7 +173,7 @@ export const FlywheelDiagram = () => {
                   return (
                     <button
                       key={seg.id}
-                      onClick={() => { setActive(seg.id); setPaused(true); }}
+                      onClick={() => setActive(seg.id)}
                       className="w-full text-left flex items-start gap-4 p-4 rounded-xl border border-[rgba(13,27,62,0.08)] hover:bg-white hover:shadow-sm transition-all duration-200"
                     >
                       <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: `${seg.color}12` }}>
