@@ -148,7 +148,7 @@ export default function WhoItsFor() {
                     <h2 className="text-2xl sm:text-3xl font-semibold text-[#0D1B3E] mb-4">{s.headline}</h2>
                     <p className="text-[#6B7280] leading-relaxed mb-6">{s.description}</p>
                     <div className="bg-[rgba(232,84,26,0.04)] rounded-2xl p-6 border border-[rgba(232,84,26,0.12)]">
-                      <h4 className="font-mono text-[11px] tracking-[0.12em] uppercase text-[#E8541A] mb-4">Common Challenges</h4>
+                      <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[rgba(232,84,26,0.06)] border border-[rgba(232,84,26,0.15)] font-mono text-[11px] tracking-[0.12em] uppercase text-[#E8541A] mb-4">Common Challenges</span>
                       <ul className="space-y-3">
                         {s.challenges.map((c, i) => (
                           <li key={i} className="flex items-start gap-3">
@@ -163,7 +163,7 @@ export default function WhoItsFor() {
                   </div>
                   {/* Right: solutions */}
                   <div className="space-y-4">
-                    <h4 className="font-mono text-[11px] tracking-[0.12em] uppercase text-[#1A7B6E] mb-2">How THC Helps</h4>
+                    <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[rgba(26,123,110,0.08)] border border-[rgba(26,123,110,0.15)] font-mono text-[11px] tracking-[0.12em] uppercase text-[#1A7B6E] mb-4">How THC Helps</span>
                     {s.solutions.map((sol, i) => {
                       const SolIcon = sol.icon;
                       return (
