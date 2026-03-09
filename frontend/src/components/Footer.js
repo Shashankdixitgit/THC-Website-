@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Linkedin, Twitter, Instagram, ArrowRight } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
+import { Button } from '@/components/ui/button';
 
 const FOOTER_NAV = [
   { label: 'Home', path: '/' },
@@ -11,8 +12,7 @@ const FOOTER_NAV = [
 ];
 
 const FOOTER_JOIN = [
-  { label: 'THC Open (Free)', path: '/join' },
-  { label: 'Starter', path: '/join' },
+  { label: 'THC Connect', path: '/join' },
   { label: 'ASCENT', path: '/join' },
   { label: 'Catalyst Circle', path: '/join' },
 ];
@@ -20,7 +20,6 @@ const FOOTER_JOIN = [
 const FOOTER_CONNECT = [
   { label: 'Partner with Us', path: '/partner' },
   { label: 'Contact', path: '/partner' },
-  { label: 'Newsletter', path: '/join' },
 ];
 
 export const Footer = () => {
@@ -90,6 +89,11 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
+            <Link to="/join" className="mt-5 block">
+              <Button data-testid="footer-join-cta" className="bg-[#E8541A] text-white hover:bg-[#D84B17] gap-1.5 text-sm h-9 px-4">
+                Join the Community <ArrowRight className="w-3.5 h-3.5" />
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -99,10 +103,6 @@ export const Footer = () => {
           <p className="font-mono text-[11px] text-[#F5F0E8]/40">
             &copy; {new Date().getFullYear()} The Healthtech Collective. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <span className="text-xs text-[#F5F0E8]/40 hover:text-[#F5F0E8]/70 transition-colors duration-200 cursor-pointer">Privacy Policy</span>
-            <span className="text-xs text-[#F5F0E8]/40 hover:text-[#F5F0E8]/70 transition-colors duration-200 cursor-pointer">Terms</span>
-          </div>
         </div>
       </div>
     </footer>
