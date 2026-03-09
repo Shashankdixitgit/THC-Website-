@@ -53,7 +53,7 @@ export default function About() {
       {/* Story Hero */}
       <section className="py-16 sm:py-20 lg:py-24" style={{ background: 'linear-gradient(180deg, rgba(13,27,62,0.04) 0%, rgba(245,240,232,1) 60%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-stretch">
             <div>
               <SectionTag>Our Story</SectionTag>
               <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#0D1B3E] tracking-tight leading-tight mb-6">
@@ -65,9 +65,14 @@ export default function About() {
                 </p>
                 <blockquote className="relative bg-white rounded-2xl border-l-4 border-[#E8541A] p-6 shadow-[0_1px_0_rgba(13,27,62,0.06),0_14px_30px_rgba(13,27,62,0.08)]">
                   <span className="absolute -top-3 -left-1 text-[#E8541A]/15 font-display text-6xl leading-none select-none">"</span>
-                  <p className="font-display text-lg sm:text-xl text-[#0D1B3E] font-medium leading-snug italic">
-                    Too many great solutions fail not because they're bad — but because they never found the <span className="text-[#E8541A] not-italic font-semibold">right problems</span>, the <span className="text-[#1A7B6E] not-italic font-semibold">right partners</span>, or the <span className="text-[#E8541A] not-italic font-semibold">right path to adoption</span>.
+                  <p className="font-display text-lg sm:text-xl text-[#0D1B3E] font-medium leading-snug italic mb-5">
+                    Too many great solutions fail not because they're bad — but because they never found the
                   </p>
+                  <div className="flex flex-wrap gap-2.5">
+                    <span className="inline-flex items-center px-4 py-2 rounded-full bg-[rgba(232,84,26,0.08)] border border-[rgba(232,84,26,0.2)] text-sm font-semibold text-[#E8541A] not-italic">Right Problems</span>
+                    <span className="inline-flex items-center px-4 py-2 rounded-full bg-[rgba(26,123,110,0.08)] border border-[rgba(26,123,110,0.2)] text-sm font-semibold text-[#1A7B6E] not-italic">Right Partners</span>
+                    <span className="inline-flex items-center px-4 py-2 rounded-full bg-[rgba(13,27,62,0.06)] border border-[rgba(13,27,62,0.15)] text-sm font-semibold text-[#0D1B3E] not-italic">Right Path to Adoption</span>
+                  </div>
                 </blockquote>
                 <p>
                   We're building the infrastructure for that journey.
@@ -75,11 +80,11 @@ export default function About() {
               </div>
             </div>
 
-            <div>
+            <div className="flex items-center">
               <img
                 src="https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/9jzuu1or_Screenshot%202026-03-09%20at%2011.56.46%E2%80%AFAM.png"
                 alt="The THC Community"
-                className="w-full h-64 sm:h-80 object-cover rounded-2xl"
+                className="w-full h-full max-h-[500px] object-cover rounded-2xl"
                 loading="lazy"
               />
             </div>
