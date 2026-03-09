@@ -183,21 +183,21 @@ export default function Home() {
           <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-[#F5F0E8] to-transparent z-10" />
           <div className="flex gap-6 animate-marquee hover:[animation-play-state:paused]" style={{ width: 'max-content', animationDuration: '40s' }}>
             {[...[
-              { name: 'Svetha Ravi', role: 'Partner at Arali Ventures', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=400&fit=crop&crop=face' },
-              { name: 'Vivek Kumar Jha', role: 'Partner, Fox Mandal & Ass.', img: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Dr. Saarthak Bakshi, PhD', role: 'CEO, Rissa IVF', img: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/1i5ftic7_Screenshot%202026-03-09%20at%202.24.16%E2%80%AFPM.png' },
+              { name: 'Garvita Baldua', role: 'Founder, SupertubosAI', img: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/ubp0v6wt_Screenshot%202026-03-09%20at%202.26.21%E2%80%AFPM.png' },
+              { name: 'Dr. Pranav Agrawal', role: 'Physician-Researcher', img: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/hwad9y2u_WhatsApp%20Image%202026-03-09%20at%2014.29.18.jpeg' },
+              { name: 'Vibhor Mathur', role: 'CxO Advisory, Dubai', img: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/yxiflacl_Screenshot%202026-03-09%20at%202.31.13%E2%80%AFPM.png' },
               { name: 'Dr. Meena Ganesh', role: 'MD & CEO, Portea Medical', img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=400&fit=crop&crop=face' },
               { name: 'Anand Sudarshan', role: 'Partner, Chiratae Ventures', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=face' },
-              { name: 'Priya Sharma', role: 'VP Innovation, Apollo Hospitals', img: 'https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=300&h=400&fit=crop&crop=face' },
-              { name: 'Rajesh Kutty', role: 'Managing Director, Healthquad', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=400&fit=crop&crop=face' },
               { name: 'Dr. Sangita Reddy', role: 'Joint MD, Apollo Hospitals', img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&h=400&fit=crop&crop=face' },
               { name: 'Vikram Vuppala', role: 'Founder & CEO, NephroPlus', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=400&fit=crop&crop=face' },
             ], ...[
-              { name: 'Svetha Ravi', role: 'Partner at Arali Ventures', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=400&fit=crop&crop=face' },
-              { name: 'Vivek Kumar Jha', role: 'Partner, Fox Mandal & Ass.', img: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=300&h=400&fit=crop&crop=face' },
+              { name: 'Dr. Saarthak Bakshi, PhD', role: 'CEO, Rissa IVF', img: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/1i5ftic7_Screenshot%202026-03-09%20at%202.24.16%E2%80%AFPM.png' },
+              { name: 'Garvita Baldua', role: 'Founder, SupertubosAI', img: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/ubp0v6wt_Screenshot%202026-03-09%20at%202.26.21%E2%80%AFPM.png' },
+              { name: 'Dr. Pranav Agrawal', role: 'Physician-Researcher', img: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/hwad9y2u_WhatsApp%20Image%202026-03-09%20at%2014.29.18.jpeg' },
+              { name: 'Vibhor Mathur', role: 'CxO Advisory, Dubai', img: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/yxiflacl_Screenshot%202026-03-09%20at%202.31.13%E2%80%AFPM.png' },
               { name: 'Dr. Meena Ganesh', role: 'MD & CEO, Portea Medical', img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=400&fit=crop&crop=face' },
               { name: 'Anand Sudarshan', role: 'Partner, Chiratae Ventures', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=face' },
-              { name: 'Priya Sharma', role: 'VP Innovation, Apollo Hospitals', img: 'https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=300&h=400&fit=crop&crop=face' },
-              { name: 'Rajesh Kutty', role: 'Managing Director, Healthquad', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=400&fit=crop&crop=face' },
               { name: 'Dr. Sangita Reddy', role: 'Joint MD, Apollo Hospitals', img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&h=400&fit=crop&crop=face' },
               { name: 'Vikram Vuppala', role: 'Founder & CEO, NephroPlus', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=400&fit=crop&crop=face' },
             ]].map((speaker, i) => (
