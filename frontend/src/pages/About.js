@@ -18,7 +18,7 @@ const TEAM = [
   {
     name: 'Shashank Dixit',
     role: 'Founder Office',
-    image: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/m41d2hcq_Screenshot%202026-03-09%20at%2012.03.57%E2%80%AFPM.png',
+    image: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/3h24csc4_Screenshot%202026-03-09%20at%2012.04.48%E2%80%AFPM.png',
     initials: 'SD',
   },
 ];
@@ -105,9 +105,9 @@ export default function About() {
                 data-testid={`team-member-${i}`}
                 className="bg-white rounded-2xl border border-[rgba(13,27,62,0.10)] p-6 shadow-[0_1px_0_rgba(13,27,62,0.06),0_14px_30px_rgba(13,27,62,0.08)] text-center hover:-translate-y-0.5 transition-transform duration-200"
               >
-                <Avatar className="w-20 h-20 mx-auto mb-4">
+                <Avatar className="w-28 h-28 mx-auto mb-4">
                   {member.image ? (
-                    <AvatarImage src={member.image} alt={member.name} />
+                    <AvatarImage src={member.image} alt={member.name} className="object-cover object-top" />
                   ) : null}
                   <AvatarFallback className="bg-[#0D1B3E] text-white text-lg font-semibold">
                     {member.initials}
