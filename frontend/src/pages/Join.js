@@ -74,7 +74,7 @@ const TIERS = [
 const COMPARISON_FEATURES = [
   { name: 'Newsletter & Updates', open: true, starter: true, ascent: true, catalyst: true },
   { name: 'Community Access (Slack/WhatsApp)', open: false, starter: true, ascent: true, catalyst: true },
-  { name: 'Event Discounts (50%)', open: false, starter: true, ascent: true, catalyst: true },
+  { name: 'Event Discounts', open: false, starter: '50%', ascent: '100%', catalyst: '100%' },
   { name: 'Weekly AMAs', open: false, starter: true, ascent: true, catalyst: true },
   { name: 'ASCENT Program', open: false, starter: false, ascent: true, catalyst: false },
   { name: 'Curated Intros & Matchmaking', open: false, starter: true, ascent: true, catalyst: true },
@@ -112,8 +112,12 @@ const TESTIMONIALS = [
   { quote: 'This community gave us signal we couldn\'t get anywhere else.', author: 'Healthcare Investor', role: 'Partner', company: 'VC Fund' },
 ];
 
-const CheckIcon = () => <Check className="w-4 h-4 text-[#1A7B6E]" />;
-const DashIcon = () => <Minus className="w-4 h-4 text-[#6B7280]/40" />;
+const CheckIcon = () => <Check className="w-4 h-4 text-[#1A7B6E] mx-auto" />;
+const DashIcon = () => <Minus className="w-4 h-4 text-[#6B7280]/40 mx-auto" />;
+const renderCell = (value) => {
+  if (typeof value === 'string') return <span className="text-sm font-medium text-[#1A7B6E]">{value}</span>;
+  return value ? <CheckIcon /> : <DashIcon />;
+};
 
 export default function Join() {
   return (
@@ -165,10 +169,10 @@ export default function Join() {
                   {COMPARISON_FEATURES.map((feat) => (
                     <TableRow key={feat.name} className="border-b border-[rgba(13,27,62,0.06)]">
                       <TableCell className="text-sm text-[#0D1B3E]/80">{feat.name}</TableCell>
-                      <TableCell className="text-center">{feat.open ? <CheckIcon /> : <DashIcon />}</TableCell>
-                      <TableCell className="text-center">{feat.starter ? <CheckIcon /> : <DashIcon />}</TableCell>
-                      <TableCell className="text-center bg-[rgba(26,123,110,0.04)]">{feat.ascent ? <CheckIcon /> : <DashIcon />}</TableCell>
-                      <TableCell className="text-center">{feat.catalyst ? <CheckIcon /> : <DashIcon />}</TableCell>
+                      <TableCell className="text-center">{renderCell(feat.open)}</TableCell>
+                      <TableCell className="text-center">{renderCell(feat.starter)}</TableCell>
+                      <TableCell className="text-center bg-[rgba(26,123,110,0.04)]">{renderCell(feat.ascent)}</TableCell>
+                      <TableCell className="text-center">{renderCell(feat.catalyst)}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
