@@ -16,21 +16,21 @@ const STAKEHOLDERS = [
 ];
 
 const ROW1_IMAGES = [
-  { src: 'https://images.unsplash.com/photo-1559223607-a43c990c692c?w=500&h=320&fit=crop', alt: 'Community meetup event' },
-  { src: 'https://images.unsplash.com/photo-1559223607-b4d0555ae227?w=500&h=320&fit=crop', alt: 'Workshop session' },
-  { src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=320&fit=crop', alt: 'Medical research' },
-  { src: 'https://images.unsplash.com/photo-1599592187465-6dc742367282?w=500&h=320&fit=crop', alt: 'Startup pitch event' },
-  { src: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=500&h=320&fit=crop', alt: 'Team collaboration' },
-  { src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&h=320&fit=crop', alt: 'Working session' },
+  { src: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/jz8ox25e_Event%20Picture%20Feb%202%202026%20%281%29.jpeg', alt: 'Whiteboard session' },
+  { src: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/631cps19_Event%20Picture%20Feb%202%202026%20%282%29.jpeg', alt: 'Community meetup' },
+  { src: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/4vtxcyw7_Event%20Picture%20Feb%202%202026%20%283%29.jpeg', alt: 'Networking evening' },
+  { src: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/a4zdv9ij_Event%20Picture%20Feb%202%202026.jpeg', alt: 'Group photo' },
+  { src: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/7f6wyd4l_Event%20Pictures%20Feb%202%202026.jpeg', alt: 'Digital Transformation talk' },
+  { src: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/7qrfhn27_LinkedIn%20Image.jpeg', alt: 'THC community gathering' },
 ];
 
 const ROW2_IMAGES = [
-  { src: 'https://images.unsplash.com/photo-1576669801615-4e2f69504d58?w=500&h=320&fit=crop', alt: 'Healthcare innovation' },
-  { src: 'https://images.unsplash.com/photo-1770221797869-81e508282ac4?w=500&h=320&fit=crop', alt: 'Healthcare tech' },
-  { src: 'https://images.unsplash.com/photo-1636249253913-40e83d5423e9?w=500&h=320&fit=crop', alt: 'Innovation lab' },
-  { src: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&h=320&fit=crop', alt: 'Hospital corridor' },
-  { src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=320&fit=crop', alt: 'Medical professionals' },
-  { src: 'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=500&h=320&fit=crop', alt: 'Health technology' },
+  { src: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/7f6wyd4l_Event%20Pictures%20Feb%202%202026.jpeg', alt: 'Digital Transformation talk' },
+  { src: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/a4zdv9ij_Event%20Picture%20Feb%202%202026.jpeg', alt: 'Group photo' },
+  { src: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/jz8ox25e_Event%20Picture%20Feb%202%202026%20%281%29.jpeg', alt: 'Whiteboard session' },
+  { src: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/4vtxcyw7_Event%20Picture%20Feb%202%202026%20%283%29.jpeg', alt: 'Networking evening' },
+  { src: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/631cps19_Event%20Picture%20Feb%202%202026%20%282%29.jpeg', alt: 'Community meetup' },
+  { src: 'https://customer-assets.emergentagent.com/job_website-maker-219/artifacts/7qrfhn27_LinkedIn%20Image.jpeg', alt: 'THC community gathering' },
 ];
 
 export default function Home() {
