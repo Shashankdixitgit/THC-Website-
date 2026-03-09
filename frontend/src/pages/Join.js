@@ -122,7 +122,7 @@ export default function Join() {
   return (
     <div data-testid="join-page">
       {/* Hero */}
-      <section className="pt-24 sm:pt-32 lg:pt-40 pb-12 sm:pb-16" style={{ background: 'linear-gradient(180deg, rgba(13,27,62,0.04) 0%, rgba(245,240,232,1) 60%)' }}>
+      <section className="pt-12 sm:pt-16 lg:pt-20 pb-12 sm:pb-16" style={{ background: 'linear-gradient(180deg, rgba(13,27,62,0.04) 0%, rgba(245,240,232,1) 60%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SectionTag className="text-center">THC Memberships</SectionTag>
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold text-[#0D1B3E] tracking-tight leading-[1.05] mb-6">
