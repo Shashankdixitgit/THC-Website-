@@ -122,7 +122,7 @@ export default function Join() {
   return (
     <div data-testid="join-page">
       {/* Hero */}
-      <section className="py-24 sm:py-32 lg:py-40" style={{ background: 'linear-gradient(180deg, rgba(13,27,62,0.04) 0%, rgba(245,240,232,1) 60%)' }}>
+      <section className="pt-24 sm:pt-32 lg:pt-40 pb-12 sm:pb-16" style={{ background: 'linear-gradient(180deg, rgba(13,27,62,0.04) 0%, rgba(245,240,232,1) 60%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SectionTag className="text-center">THC Memberships</SectionTag>
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold text-[#0D1B3E] tracking-tight leading-[1.05] mb-6">
@@ -135,7 +135,7 @@ export default function Join() {
       </section>
 
       {/* Pricing Tiers */}
-      <section className="py-12 sm:py-16">
+      <section className="py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {TIERS.map((t) => (
