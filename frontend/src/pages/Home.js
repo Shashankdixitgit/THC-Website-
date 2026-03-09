@@ -15,13 +15,22 @@ const STAKEHOLDERS = [
   { icon: TrendingUp, title: 'Investors & Partners', description: 'Invest in solutions with validated signals', testId: 'stakeholder-card-investors' },
 ];
 
-const GALLERY_IMAGES = [
-  { src: 'https://images.unsplash.com/photo-1559223607-a43c990c692c?w=600&h=400&fit=crop', alt: 'Community meetup event' },
-  { src: 'https://images.unsplash.com/photo-1559223607-b4d0555ae227?w=600&h=400&fit=crop', alt: 'Workshop session' },
-  { src: 'https://images.pexels.com/photos/5355859/pexels-photo-5355859.jpeg?auto=compress&w=600&h=400&fit=crop', alt: 'Medical innovation' },
-  { src: 'https://images.unsplash.com/photo-1599592187465-6dc742367282?w=600&h=400&fit=crop', alt: 'Startup pitch event' },
-  { src: 'https://images.unsplash.com/photo-1770221797869-81e508282ac4?w=600&h=400&fit=crop', alt: 'Healthcare tech collaboration' },
-  { src: 'https://images.unsplash.com/photo-1636249253913-40e83d5423e9?w=600&h=400&fit=crop', alt: 'Innovation lab' },
+const ROW1_IMAGES = [
+  { src: 'https://images.unsplash.com/photo-1559223607-a43c990c692c?w=500&h=320&fit=crop', alt: 'Community meetup event' },
+  { src: 'https://images.unsplash.com/photo-1559223607-b4d0555ae227?w=500&h=320&fit=crop', alt: 'Workshop session' },
+  { src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=320&fit=crop', alt: 'Medical research' },
+  { src: 'https://images.unsplash.com/photo-1599592187465-6dc742367282?w=500&h=320&fit=crop', alt: 'Startup pitch event' },
+  { src: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=500&h=320&fit=crop', alt: 'Team collaboration' },
+  { src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&h=320&fit=crop', alt: 'Working session' },
+];
+
+const ROW2_IMAGES = [
+  { src: 'https://images.unsplash.com/photo-1576669801615-4e2f69504d58?w=500&h=320&fit=crop', alt: 'Healthcare innovation' },
+  { src: 'https://images.unsplash.com/photo-1770221797869-81e508282ac4?w=500&h=320&fit=crop', alt: 'Healthcare tech' },
+  { src: 'https://images.unsplash.com/photo-1636249253913-40e83d5423e9?w=500&h=320&fit=crop', alt: 'Innovation lab' },
+  { src: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&h=320&fit=crop', alt: 'Hospital corridor' },
+  { src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=320&fit=crop', alt: 'Medical professionals' },
+  { src: 'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=500&h=320&fit=crop', alt: 'Health technology' },
 ];
 
 export default function Home() {
@@ -116,26 +125,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Work in Action */}
-      <section className="py-16 sm:py-20">
+      {/* Our Work in Action — Sliding Gallery */}
+      <section className="py-16 sm:py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2 className="font-display text-3xl sm:text-4xl font-semibold text-[#0D1B3E] tracking-tight">
               Our Work <span className="text-[#E8541A]">in Action</span>
             </h2>
             <p className="mt-3 text-[#6B7280] text-base">Snapshots from our engagements across organizations and communities</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-            {GALLERY_IMAGES.map((img, i) => (
-              <div key={i} className="aspect-[4/3] rounded-xl overflow-hidden group relative">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(13,27,62,0.5)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-end p-3">
-                  <span className="text-white text-xs font-medium">{img.alt}</span>
+        </div>
+
+        {/* Row 1 — slides left */}
+        <div className="relative mb-4">
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-[#F5F0E8] to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-[#F5F0E8] to-transparent z-10" />
+          <div className="flex gap-4 animate-marquee hover:[animation-play-state:paused]" style={{ width: 'max-content' }}>
+            {[...ROW1_IMAGES, ...ROW1_IMAGES].map((img, i) => (
+              <div key={`r1-${i}`} className="flex-shrink-0 w-[300px] sm:w-[360px] h-[200px] sm:h-[230px] rounded-2xl overflow-hidden group relative">
+                <img src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(13,27,62,0.45)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-end p-4">
+                  <span className="text-white text-sm font-medium">{img.alt}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Row 2 — slides right */}
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-[#F5F0E8] to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-[#F5F0E8] to-transparent z-10" />
+          <div className="flex gap-4 animate-marquee-reverse hover:[animation-play-state:paused]" style={{ width: 'max-content' }}>
+            {[...ROW2_IMAGES, ...ROW2_IMAGES].map((img, i) => (
+              <div key={`r2-${i}`} className="flex-shrink-0 w-[300px] sm:w-[360px] h-[200px] sm:h-[230px] rounded-2xl overflow-hidden group relative">
+                <img src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(13,27,62,0.45)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-end p-4">
+                  <span className="text-white text-sm font-medium">{img.alt}</span>
                 </div>
               </div>
             ))}
